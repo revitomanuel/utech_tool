@@ -1,6 +1,6 @@
 <?php
-     include "../koneksi.php";
-include "index.php";
+
+include "homepage.php";
 
 ?>
 
