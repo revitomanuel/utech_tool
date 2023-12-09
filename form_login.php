@@ -6,7 +6,21 @@
 <title> MASUKAN DATA DENGAN BENAR</title>
 
 </head>
+<body>
+<br>
+        <div class="container">
+ <form name="login" method="POST" action="aksi_login.php">
+  <h3 class="textJudul mb-5 mt-1">Login</h3>
 
+ <div class="mb-3">
+  <label for="exampleInputUserId" class="form-label textForm"> Masukan Id</label>
+  <input type="text" name="id" class="form-control" id="id" aria-describedby="idHelp"placeholder="Masukan Id">
+ </div>
 
+ <div class="mb-3">
+  <label for="exampleInputPassword1" class="form-label textForm">Password</label>
+  <input type="password" name="password" class="form-control" id="exampleInputPassword1"placeholder="Masukan Password">
+ </div>
 
+ </form></div></body>
 </html>
