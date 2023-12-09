@@ -16,6 +16,18 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_utech` /*!40100 DEFAULT CHARACTER SE
 
 USE `db_utech`;
 
+/*Table structure for table `tb_admin` */
+
+DROP TABLE IF EXISTS `tb_admin`;
+
+CREATE TABLE `tb_admin` (
+  `id_admin` int(10) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `tb_admin` */
+
 /*Table structure for table `tb_barang` */
 
 DROP TABLE IF EXISTS `tb_barang`;
