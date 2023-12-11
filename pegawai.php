@@ -25,7 +25,7 @@ include "index.php";
   <br>
  <div class="table-responsive">
 		<table class="table table-bordered table-striped table-hover">
-		<table border='3' cellspacing="0" cellpadding='15' align="center">
+		<table border='4' cellspacing="0" cellpadding='20' align="center">
 
           <tr>
 			<td class="active">ID</td>

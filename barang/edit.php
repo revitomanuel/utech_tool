@@ -43,7 +43,7 @@ $id_barang=$_GET['id_barang'];
     <div class="form-group">
 		<label for="jenis_barang">Jenis Barang</label>
 		<select id="jenis_barang" class="form-control" value="<?php echo $data[2];?>"class="form-control" jenis_barang="jenis_barang">
-			<option value="">- Pilih jenis barang</option>
+			<option value="pilih">- Pilih jenis barang</option>
 			<option value="">iPhone</option>
 			<option value="">Samsung</option>
 			<option value="">Oppo</option>
@@ -55,9 +55,9 @@ $id_barang=$_GET['id_barang'];
     <div class="form-group">
 		<label for="kategori_barang">Kategori Barang</label>
 		<select id="kategori_barang" class="form-control" value="<?php echo $data[3];?>"class="form-control" kategori_barang="kategori_barang">
-			<option value="">- Pilih kategori barang</option>
-			<option value="">iOS</option>
-			<option value="">Android</option>
+			<option value="pilih_kategori_barang">- Pilih kategori barang</option>
+			<option value="iOs">iOS</option>
+			<option value="android">Android</option>
 		</select>
 	</div>
 </p>
