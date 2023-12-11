@@ -56,9 +56,21 @@
             background-image: url(Image/bg.png);
             background-size: cover;
         }
+
+        .carousel-inner img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .carousel {
+          width: 1300px; 
+          height: 560;
+          margin: auto; 
+        }
     </style>
 
-
+<br><br><br>
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -80,6 +92,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</br></br></br>
 
 </body>
 

@@ -11,7 +11,7 @@ include "index.php";
 
 <body >
 
-<h2><center>Data Barang</center></h2>
+<h2><center>Data Pegawai</center></h2>
   <hr>
   <nav class="navbar bg-body-tertiary">
   <div class="container-fluid" >
@@ -29,13 +29,9 @@ include "index.php";
 
           <tr>
 			<td class="active">ID</td>
-          <td class="active">Nama Barang</td>
-          <td class="active">Jenis Barang</td>
-		  <td class="active">Kategori Barang</td>
-          <td class="active">Tahun Rilis</td>
-		  <td class="active">Harga Satuan</td>
-          <td class="active">Stok</>
-        	<td align="center">Aksi</td>
+          <td class="active">Nama Pegawai</td>
+          <td class="active">Alamat Pegawai</td>
+		  <td class="active">Telp Pegawai</td>
 		</tr>
 
 
@@ -43,9 +39,9 @@ include "index.php";
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_barang where id_barang like '%".$cari."%'";
+            $sql = "SELECT * from tb_pegawai where id_pegawai like '%".$cari."%'";
          }else{
-            $sql = "SELECT * from tb_barang";
+            $sql = "SELECT * from tb_pegawai";
          }
 
 			$no=1;
@@ -55,16 +51,14 @@ include "index.php";
 				?>
 
                  <tr>
-                <td><?php echo $data['id_barang']; ?></td>
-                <td><?php echo $data['nama_barang']; ?></td>
-                <td><?php echo $data['jenis_barang']; ?></td>
-                <td><?php echo $data['kategori_barang']; ?></td>
-                <td><?php echo $data['tahun_rilis']; ?></td>
-                <td><?php echo $data['harga_satuan']; ?></td>
-                <td><?php echo $data['stok_barang']; ?></td>
+                <td><?php echo $data['id_pegawai']; ?></td>
+                <td><?php echo $data['nama_pegawai']; ?></td>
+                <td><?php echo $data['alamat_pegawai']; ?></td>
+                <td><?php echo $data['telp_pegawai']; ?></td>
+               
    
 
-    <td><a href="barang/edit.php?dk=<?php echo "$data[id_barang]"; ?>">EDIT</a> |						<a href="barang/aksi_hapus.php?dk=<?php echo "$data[id_barang]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_barang]"; ?>  ')">HAPUS</a></td>
+    <td><a href="pegawai/edit.php?dk=<?php echo "$data[id_pegawai]"; ?>">EDIT</a> |						<a href="pegawai/aksi_hapus.php?dk=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a></td>
 				</tr>
 				<?php
 				$no++;
@@ -73,7 +67,7 @@ include "index.php";
 		</table>
 <p>
 
- <center> <right><input type="button" value="Tambah Data Barang Baru" onclick="location.href='barang/tambah.php'"></right>
+ <center> <right><input type="button" value="Tambah Data Pegawai Baru" onclick="location.href='pegawai/tambah.php'"></right>
 
   <right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center>
   </p></table>

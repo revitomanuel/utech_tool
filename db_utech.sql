@@ -114,3 +114,6 @@ CREATE TABLE `tb_transaksi` (
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO tb_barang (id_barang, nama_barang, jenis_barang,kategori_barang,tahun_rilis,harga_satuan,stok_barang) 
+VALUES (001, "samsung z flip", "Samsung","Android","2022",12000000,12);
