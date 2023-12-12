@@ -14,9 +14,7 @@ $stok_barang=$_POST['stok_barang'];
 if($id_barang==""||$nama_barang==""||$jenis_barang==""||$kategori_barang==""||$tahun_rilis==""||$harga_satuan==""||$stok_barang==""){;?>
 <!--jika ada form yang kosong-->
 <script type="text/javascript">
-alert("Data tidak boleh kosong!!");  document.location="../barang.php?mod=tambah";</script>
-
-
+alert("Data tidak boleh kosong!!");  document.location="../barang.php?mod=tambah";</script>;
 
 
 <?php
@@ -27,15 +25,22 @@ alert("Data tidak boleh kosong!!");  document.location="../barang.php?mod=tambah
   $row= mysqli_num_rows($queryCek);
 
 
-  if($row==0){
-// script untuk menambahkan data ke tabel aksi_tambah
-    $query=mysqli_query($db_link,"INSERT INTO tb_barang(id_barang,nama_barang,jenis_barang,kategori_barang,tahun_rilis,harga_satuan,stok_barang)VALUES('$id_barang','$nama_barang','$jenis_barang','$kategori_barang','$tahun_rilis','$harga_satuan','$stok_barang')")or die ("GAGAL");
+  // Assuming $row is the result of a SELECT query
+if ($row ==0) {
+  // script untuk menambahkan ke table tb_barang table  
+  $query = mysqli_query($db_link, "INSERT INTO tb_barang (id_barang, nama_barang, jenis_barang, kategori_barang, tahun_rilis, harga_satuan, stok_barang) VALUES ('$id_barang', '$nama_barang', '$jenis_barang', '$kategori_barang', '$tahun_rilis', '$harga_satuan', '$stok_barang')") or die("GAGAL");
 
-  
+  if ($query) {
+      echo "Data berhasil ditambahkan.";
+  } else {
+      echo "Gagal menambahkan data: " . mysqli_error($db_link);
+  }
+} else {
+  echo "Data sudah ada. Tidak dapat menambahkan data ganda.";
 
 
-   }else{?>
-
+?>
+   
 <script type="text/javascript">
   alert("Id barang sudah terdaftar!!");
  document.location="tambah.php";

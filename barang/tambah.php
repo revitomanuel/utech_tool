@@ -34,7 +34,7 @@
     <div class="form-group">
 		<label for="jenis_barang">Jenis Barang</label>
 		<select name="jenis_barang" id="jenis_barang" class="form-control">
-			<option value="pilih jenis barang">- Pilih jenis barang</option>
+			<option value="jenis_barang">- Pilih jenis barang</option>
 			<option value="iphone">iPhone</option>
 			<option value="samsung">Samsung</option>
 			<option value="oppo">Oppo</option>
@@ -46,7 +46,7 @@
     <div class="form-group">
 		<label for="kategori_barang">Kategori Barang</label>
 		<select  name="kategori_barang" id="kategori_barang" class="form-control">
-			<option value="pilih_jenis_barang">- Pilih kategori barang</option>
+			<option value="kategori_barang">- Pilih kategori barang</option>
 			<option value="iOS">iOS</option>
 			<option value="android">Android</option>
 		</select>
@@ -55,12 +55,16 @@
 
 <p>
     <div class="form-group row">
-		<label for="tahun_rilis" class="col-sm-2 col-form-label">Tahun Rilis</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" name="tahun_rilis" id="tahun_rilis">
+	<label for="tahun_rilis" class="col-sm-2 col-form-label">Tahun Rilis:</label>
+	<div class="col-sm-10">
+<input type="number" id="tahun_rilis" name="tahun_rilis" min="1900" max="2099" step="1">
+
 		</div>
 	</div>
 </p>
+
+
+
 
 <p>
     <div class="form-group row">

@@ -17,7 +17,7 @@ $id_barang=$_GET['id_barang'];
 </head>
 
 <body>
-<form name="login" method="post" action="">
+<form name="login" method="post" action="aksi_edit.php">
 <div class="container">
 <h3 class ="textjudulmb-5 mt-1"><center> Update Barang <center></h3>
 
@@ -43,10 +43,10 @@ $id_barang=$_GET['id_barang'];
     <div class="form-group">
 		<label for="jenis_barang">Jenis Barang</label>
 		<select id="jenis_barang" class="form-control" value="<?php echo $data[2];?>"class="form-control" jenis_barang="jenis_barang">
-			<option value="pilih">- Pilih jenis barang</option>
-			<option value="">iPhone</option>
-			<option value="">Samsung</option>
-			<option value="">Oppo</option>
+			<option value="pilih_jenis_barang">- Pilih jenis barang</option>
+			<option value="iphone">iPhone</option>
+			<option value="samsung">Samsung</option>
+			<option value="oppo">Oppo</option>
 </select>
 	</div>
 </p>
