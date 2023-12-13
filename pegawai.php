@@ -15,23 +15,24 @@ include "index.php";
   <hr>
   <nav class="navbar bg-body-tertiary">
   <div class="container-fluid" >
-    <form method='GET' class="d-flex" role="search">
+    <form method='GET' class="d-flex" role="search" style="margin-left: 30px;">
       <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button Name="Cari" class="btn btn-outline-success" type="submit">Search</button>
     </form>
-  </div>
-</nav>
+   </div>
+  </nav>
 
   <br>
  <div class="table-responsive">
 		<table class="table table-bordered table-striped table-hover">
-		<table border='4' cellspacing="0" cellpadding='20' align="center">
+		<table border='3' cellspacing="0" cellpadding='15' align="center">
 
           <tr>
 			<td class="active">ID</td>
           <td class="active">Nama Pegawai</td>
           <td class="active">Alamat Pegawai</td>
 		  <td class="active">Telp Pegawai</td>
+        	<td align="center">Aksi</td>
 		</tr>
 
 
@@ -39,7 +40,7 @@ include "index.php";
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_pegawai where id_pegawai like '%".$cari."%'";
+            $sql = "SELECT * from tb_pegawai where id_pegawai like '%$cari%' or nama_pegawai = '$cari'";
          }else{
             $sql = "SELECT * from tb_pegawai";
          }
@@ -55,10 +56,13 @@ include "index.php";
                 <td><?php echo $data['nama_pegawai']; ?></td>
                 <td><?php echo $data['alamat_pegawai']; ?></td>
                 <td><?php echo $data['telp_pegawai']; ?></td>
-               
+                
    
 
-    <td><a href="pegawai/edit.php?dk=<?php echo "$data[id_pegawai]"; ?>">EDIT</a> |						<a href="pegawai/aksi_hapus.php?dk=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a></td>
+    <td>
+      <a href="pegawai/edit.php?id_barang=<?php echo "$data[id_pegawai]"; ?>">EDIT</a> |						
+      <a href="pegawai/aksi_hapus.php?id_barang=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a>
+    </td>
 				</tr>
 				<?php
 				$no++;
