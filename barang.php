@@ -15,12 +15,12 @@ include "index.php";
   <hr>
   <nav class="navbar bg-body-tertiary">
   <div class="container-fluid" >
-    <form method='GET' class="d-flex" role="search">
+    <form method='GET' class="d-flex" role="search" style="margin-left: 30px;">
       <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button Name="Cari" class="btn btn-outline-success" type="submit">Search</button>
     </form>
-  </div>
-</nav>
+  </div>
+  </nav>
 
   <br>
  <div class="table-responsive">
@@ -43,7 +43,7 @@ include "index.php";
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_barang where id_barang like '%".$cari."%'";
+            $sql = "SELECT * from tb_barang where id_barang like '%$cari%' or nama_barang = '$cari'";
          }else{
             $sql = "SELECT * from tb_barang";
          }
@@ -64,7 +64,10 @@ include "index.php";
                 <td><?php echo $data['stok_barang']; ?></td>
    
 
-    <td><a href="barang/edit.php?dk=<?php echo "$data[id_barang]"; ?>">EDIT</a> |						<a href="barang/aksi_hapus.php?dk=<?php echo "$data[id_barang]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_barang]"; ?>  ')">HAPUS</a></td>
+    <td>
+      <a href="barang/edit.php?id_barang=<?php echo "$data[id_barang]"; ?>">EDIT</a> |						
+      <a href="barang/aksi_hapus.php?id_barang=<?php echo "$data[id_barang]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_barang]"; ?>  ')">HAPUS</a>
+    </td>
 				</tr>
 				<?php
 				$no++;
