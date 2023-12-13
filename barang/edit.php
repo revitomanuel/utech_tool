@@ -1,14 +1,8 @@
-<?php
-include "../index.php";
-include "../koneksi.php";
 
-$id_barang=$_GET['id_barang'];
-			$sql = "SELECT * FROM tb_barang WHERE id_barang='$id_barang'";
-			$query = mysqli_query($db_link,$sql);
-			$data = mysqli_fetch_array($query);
-		?>
+
 <html>
 <head>
+	
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -19,13 +13,13 @@ $id_barang=$_GET['id_barang'];
 <body>
 <form name="login" method="post" action="aksi_edit.php">
 <div class="container">
-<h3 class ="textjudulmb-5 mt-1"><center> Update Barang <center></h3>
+<h3 class ="textjudulmb-5 mt-1"><center>Update Barang<center></h3>
 
 <p>
 	<div class="form-group row">
 		<label for="id_barang" class="col-sm-2 col-form-label">ID Barang</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="id_barang" placeholder="Masukan ID Barang (10 Digit)" value="<?php echo $data[0];?>"class="form-control" id_barang="id_barang">
+			<input type="text" class="form-control"  name="id_barang" id="id_barang" placeholder="Masukan ID Barang (10 Digit)">
 		</div>
 	</div>
 </p>
@@ -34,7 +28,7 @@ $id_barang=$_GET['id_barang'];
 	<div class="form-group row">
 		<label for="nama_barang" class="col-sm-2 col-form-label">Nama Barang</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="nama_barang" value="<?php echo $data[1];?>"class="form-control" nama_barang="nama_barang">
+			<input type="text" class="form-control" name="nama_barang" id="nama_barang" >
 		</div>
 	</div>
 </P>
@@ -42,8 +36,8 @@ $id_barang=$_GET['id_barang'];
 <p>
     <div class="form-group">
 		<label for="jenis_barang">Jenis Barang</label>
-		<select id="jenis_barang" class="form-control" value="<?php echo $data[2];?>"class="form-control" jenis_barang="jenis_barang">
-			<option value="pilih_jenis_barang">- Pilih jenis barang</option>
+		<select name="jenis_barang" id="jenis_barang" class="form-control">
+			<option value="jenis_barang">- Pilih jenis barang</option>
 			<option value="iphone">iPhone</option>
 			<option value="samsung">Samsung</option>
 			<option value="oppo">Oppo</option>
@@ -54,9 +48,9 @@ $id_barang=$_GET['id_barang'];
 <p>
     <div class="form-group">
 		<label for="kategori_barang">Kategori Barang</label>
-		<select id="kategori_barang" class="form-control" value="<?php echo $data[3];?>"class="form-control" kategori_barang="kategori_barang">
-			<option value="pilih_kategori_barang">- Pilih kategori barang</option>
-			<option value="iOs">iOS</option>
+		<select  name="kategori_barang" id="kategori_barang" class="form-control">
+			<option value="kategori_barang">- Pilih kategori barang</option>
+			<option value="iOS">iOS</option>
 			<option value="android">Android</option>
 		</select>
 	</div>
@@ -64,18 +58,22 @@ $id_barang=$_GET['id_barang'];
 
 <p>
     <div class="form-group row">
-		<label for="tahun_rilis" class="col-sm-2 col-form-label">Tahun Rilis</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" tahun_rilis="tahun_rilis" value="<?php echo $data[4];?>"class="form-control" tahun_rilis="tahun_rilis">
+	<label for="tahun_rilis" class="col-sm-2 col-form-label">Tahun Rilis:</label>
+	<div class="col-sm-10">
+<input type="number" id="tahun_rilis" name="tahun_rilis" min="1900" max="2099" step="1">
+
 		</div>
 	</div>
 </p>
+
+
+
 
 <p>
     <div class="form-group row">
 		<label for="harga_satuan" class="col-sm-2 col-form-label">Harga Satuan</label>
 		<div class="col-sm-10">
-			<input type="number" class="form-control" harga_satuan="harga_satuan" value="<?php echo $data[5];?>"class="form-control" harga_satuan="harga_satuan">
+			<input type="number" class="form-control" name="harga_satuan" id="harga_satuan" >
 		</div>
 	</div>
 </p>
@@ -83,7 +81,7 @@ $id_barang=$_GET['id_barang'];
     <div class="form-group row">
 		<label for="stok_barang" class="col-sm-2 col-form-label">Stok Barang</label>
 		<div class="col-sm-10">
-			<input type="number" class="form-control" stok_barang="stok_barang" value="<?php echo $data[6];?>"class="form-control" stok_barang="stok_barang">
+			<input type="number" class="form-control" name="stok_barang" id="stok_barang">
 		</div>
 	</div>
 
