@@ -26,22 +26,22 @@ if(isset($_GET['id_pegawai'])) {
                 <form action="aksi_edit.php" method="POST">
 
 					<div class="mb-3">
-						<label for="id_barang" class="form-label">ID Pegawai:</label>
+						<label for="id_pegawai" class="form-label">ID Pegawai:</label>
 						<input type="text" class="form-control" id="id_pegawai" name="id_pegawai" value="<?php echo $data['id_pegawai']; ?>" readonly>
 					</div>	
                     
                     <div class="mb-3">
-                        <label for="nama_barang" class="form-label">Nama Pegawai:</label>
+                        <label for="nama_pegawai" class="form-label">Nama Pegawai:</label>
                         <input type="text" class="form-control" id="nama_pegawai" name="nama_pegawai" value="<?php echo $data['nama_pegawai']; ?>">
                     </div>
                     
                     <div class="mb-3">
-                        <label for="jenis_barang" class="form-label">Alamat Pegawai:</label>
+                        <label for="alamat_pegawai" class="form-label">Alamat Pegawai:</label>
                         <input type="text" class="form-control" id="alamat_pegawai" name="alamat_pegawai" value="<?php echo $data['alamat_pegawai']; ?>">
                     </div>
                     
                     <div class="mb-3">
-                        <label for="kategori_barang" class="form-label">Telp Pegawai:</label>
+                        <label for="telp_pegawai" class="form-label">Telp Pegawai:</label>
                         <input type="text" class="form-control" id="telp_pegawai" name="telp_pegawai" value="<?php echo $data['telp_pegawai']; ?>">
                     </div>
                     </div>
