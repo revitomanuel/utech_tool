@@ -17,3 +17,24 @@ body{
     background-color: #ffffff;
     min-height:500px;
 }
+
+.btn::after {
+    display: none;
+}
+
+.dropdown-toggle {
+    display: none; /* Sembunyikan dropdown menu secara default */
+  }
+.dropdown-toggle {
+    display: block; /* Tampilkan dropdown menu saat kursor dihover pada teks */
+}
+
+/* Menyembunyikan panah dropdown bawaan */
+.custom-dropdown::after {
+    display: none !important;
+  }
+  
+/* Tampilkan dropdown saat hover */
+  .custom-dropdown:hover + .dropdown-menu {
+    display: block;
+  }
