@@ -3,13 +3,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>U-TECH: Smart Living, Smarter Phones | U-TECH Online Store</title>
+    <title>Homepage ⦁ U-TECH</title>
 </head>
   
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-#000000">
   <div class="container-fluid">
-    <a class="navbar-brand">
+    <a class="navbar-brand" href="homepage.php">
       <img src="Image/logo-utech.png" alt="Logo" width="55" height="55" class="d-inline-block">
 	</a>
 
@@ -54,7 +54,7 @@
 
 <style>
     body {
-        background-image: url(Image/bg.png);
+        background-image: url(Image/bg-plain.png);
         background-size: cover;
     }
 
@@ -65,8 +65,8 @@
     }
 
     .carousel {
-        width: 1300px; 
-        height: 560;
+        width: 1536px; 
+        height: 614;
         margin: auto; 
     }
 
@@ -77,7 +77,7 @@
     
 </style>
 
-<br><br><br>
+
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -99,9 +99,6 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</br></br></br>
 
 </body>
-
-
 </html>

@@ -11,21 +11,20 @@ include "navbar.php";
 
 <body >
 
-<h2><center>Data Barang</center></h2>
-  <hr>
-  <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid" >
-    <form method='GET' class="d-flex" role="search" style="margin-left: 30px;">
-      <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button Name="Cari" class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-  </nav>
+<br><h1><center>Data Barang</center></h1></br>
+
+<div class="container-fluid" >
+  <form method='GET' class="d-flex" role="search" style="margin-left: 30px;">
+    <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button Name="Cari" class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</div>
+
 
   <br>
- <div class="table-responsive">
+ <center><div class="table-responsive">
 		<table class="table table-bordered table-striped table-hover">
-		<table border='3' cellspacing="0" cellpadding='15' align="center">
+		<table cellspacing="0" cellpadding='35' align="center">
 
           <tr>
 			<td class="active">ID</td>
@@ -38,12 +37,21 @@ include "navbar.php";
         	<td align="center">Aksi</td>
 		</tr>
 
+<style>
+  .table-responsive {
+    background-color: white;
+    width: 1300;
+  }
+
+
+
+</style>  
 
 		<?php
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_barang where id_barang like '%$cari%' or nama_barang = '$cari'";
+            $sql = "SELECT * from tb_barang where id_barang like '%$cari%' or nama_barang like '%$cari%'";
          }else{
             $sql = "SELECT * from tb_barang";
          }
@@ -74,14 +82,15 @@ include "navbar.php";
 				}
 		?>
 		</table>
-<p>
 
- <center> <right><input type="button" value="Tambah Data Barang Baru" onclick="location.href='barang/tambah.php'"></right>
+</div></center>
 
-  <right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center>
-  </p></table>
+ 
+<p><center><right><input type="button" value="Tambah Data Barang Baru" onclick="location.href='barang/tambah.php'"></right>
 
-  </div>
+<right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center></p>
+
+  
 
 </body>
 

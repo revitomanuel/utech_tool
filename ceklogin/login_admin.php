@@ -16,11 +16,16 @@ if ($result) {
     // Memeriksa apakah data ditemukan
     if ($result->num_rows > 0) {
         // Login berhasil, arahkan ke halaman selanjutnya atau lakukan tindakan lainnya
-		header("Location:../homepage_pegawai.php");
-    } else {
+		header("Location:../homepage.php");
+    } else {?>
         // Login gagal, arahkan kembali ke halaman login dengan pesan error
-        echo "ID atau password salah. Silakan coba lagi.";
+        <script type="text/javascript">
+        alert("ID Admin dan Password tidak sesuai!");
+        document.location="../index.php";
+        </script>
+    <?php
     }
+
 } else {
     // Query gagal dieksekusi
     echo "Error: " . $db_link->error;

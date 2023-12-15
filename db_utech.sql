@@ -118,14 +118,14 @@ DROP TABLE IF EXISTS `tb_transaksi`;
 CREATE TABLE `tb_transaksi` (
   `id_transaksi` char(5) NOT NULL,
   `id_customer` char(10) NOT NULL,
-  `id_pegawai` char(10) NOT NULL,
+  `id_admin` char(6) NOT NULL,
   `tgl_transaksi` date NOT NULL,
   `total` int(10) NOT NULL,
   PRIMARY KEY (`id_transaksi`),
-  KEY `id_pegawai` (`id_pegawai`),
   KEY `id_customer` (`id_customer`),
-  CONSTRAINT `tb_transaksi_ibfk_1` FOREIGN KEY (`id_pegawai`) REFERENCES `tb_pegawai` (`id_pegawai`),
-  CONSTRAINT `tb_transaksi_ibfk_2` FOREIGN KEY (`id_customer`) REFERENCES `tb_customer` (`id_customer`)
+  KEY `id_admin` (`id_admin`),
+  CONSTRAINT `tb_transaksi_ibfk_2` FOREIGN KEY (`id_customer`) REFERENCES `tb_customer` (`id_customer`),
+  CONSTRAINT `tb_transaksi_ibfk_3` FOREIGN KEY (`id_admin`) REFERENCES `tb_admin` (`id_admin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `tb_transaksi` */
