@@ -90,7 +90,7 @@
                         <a class="dropdown-item" href="#"><img src="Image/login.png" alt="Login" width="20" height="20"></a>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="login.php">Login atau Mendaftar</a></li>                  
+                        <li><a class="dropdown-item" href="index.php">Logout</a></li>                  
                     </ul>  
                 </li>
             </ul>  

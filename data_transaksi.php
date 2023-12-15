@@ -11,7 +11,7 @@ include "navbar.php";
 
 <body >
 
-<h2><center>Data Pegawai</center></h2>
+<h2><center>Data transaksi</center></h2>
   <hr>
   <nav class="navbar bg-body-tertiary">
   <div class="container-fluid" >
@@ -19,7 +19,7 @@ include "navbar.php";
       <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button Name="Cari" class="btn btn-outline-success" type="submit">Search</button>
     </form>
-   </div>
+  </div>
   </nav>
 
   <br>
@@ -29,9 +29,12 @@ include "navbar.php";
 
           <tr>
 			<td class="active">ID</td>
-          <td class="active">Nama Pegawai</td>
-          <td class="active">Alamat Pegawai</td>
-		  <td class="active">Telp Pegawai</td>
+          <td class="active">Nama Barang</td>
+          <td class="active">Jenis Barang</td>
+		  <td class="active">Kategori Barang</td>
+          <td class="active">Tahun Rilis</td>
+		  <td class="active">Harga Satuan</td>
+          <td class="active">Stok</>
         	<td align="center">Aksi</td>
 		</tr>
 
@@ -40,9 +43,9 @@ include "navbar.php";
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_pegawai where id_pegawai like '%$cari%' or nama_pegawai = '$cari'";
+            $sql = "SELECT * from tb_barang where id_barang like '%$cari%' or nama_barang = '$cari'";
          }else{
-            $sql = "SELECT * from tb_pegawai";
+            $sql = "SELECT * from tb_barang";
          }
 
 			$no=1;
@@ -52,16 +55,18 @@ include "navbar.php";
 				?>
 
                  <tr>
-                <td><?php echo $data['id_pegawai']; ?></td>
-                <td><?php echo $data['nama_pegawai']; ?></td>
-                <td><?php echo $data['alamat_pegawai']; ?></td>
-                <td><?php echo $data['telp_pegawai']; ?></td>
-                
+                <td><?php echo $data['id_barang']; ?></td>
+                <td><?php echo $data['nama_barang']; ?></td>
+                <td><?php echo $data['jenis_barang']; ?></td>
+                <td><?php echo $data['kategori_barang']; ?></td>
+                <td><?php echo $data['tahun_rilis']; ?></td>
+                <td><?php echo $data['harga_satuan']; ?></td>
+                <td><?php echo $data['stok_barang']; ?></td>
    
 
     <td>
-      <a href="pegawai/edit.php?id_pegawai=<?php echo "$data[id_pegawai]"; ?>">EDIT</a> |						
-      <a href="pegawai/aksi_hapus.php?id_pegawai=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a>
+      <a href="barang/edit.php?id_barang=<?php echo "$data[id_barang]"; ?>">EDIT</a> |						
+      <a href="barang/aksi_hapus.php?id_barang=<?php echo "$data[id_barang]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_barang]"; ?>  ')">HAPUS</a>
     </td>
 				</tr>
 				<?php
@@ -71,7 +76,7 @@ include "navbar.php";
 		</table>
 <p>
 
- <center> <right><input type="button" value="Tambah Data Pegawai Baru" onclick="location.href='pegawai/tambah.php'"></right>
+ <center> <right><input type="button" value="Tambah Data Barang Baru" onclick="location.href='barang/tambah.php'"></right>
 
   <right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center>
   </p></table>

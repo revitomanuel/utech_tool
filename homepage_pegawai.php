@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../menuisi/transaksi1.php">Transaksi</a>
+          <a class="nav-link active" aria-current="page" href="transaksi/transaksi1.php">Transaksi</a>
         </li></ul></div>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,7 +42,7 @@
           <a class="nav-link active" aria-current="page" href="../menuisi/data_transaksi.php">Data Transaksi</a>
 
         <li class="nav-item">
-          <a class="nav-link" href="../index.php">Logout</a>
+          <a class="nav-link" href="index.php">Logout</a>
         </li>
       </ul>
     </div>
@@ -54,7 +54,7 @@
 
 <style>
     body {
-        background-image: url(Image/bg-customer.png);
+        background-image: url(Image/bg.png);
         background-size: cover;
     }
 
