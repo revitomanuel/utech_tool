@@ -1,22 +1,12 @@
 <?php
 include "../koneksi.php";
+include "../navbar.php";
 
-$host = 'localhost';
-$username = 'root';
-$password = "";
-$database = 'db_utech';
-
-$db_link= mysqli_connect($hostname,$user_name,$password,$database_name);
-
-// Periksa koneksi
-if ($db_link->connect_error) {
-    die("Koneksi gagal: " . $db_link->connect_error);
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
     $tanggal = date("Y-m-d"); // Tanggal hari ini
-    $id_customer = $_POST['id_customer'];
+    $id_customer= $_POST['id_customer'];
     $idAdmin = $_POST['id_admin']; // ID Admin, bisa dari sesi login atau form lain
     $idBarang = $_POST['id_barang'];
     $jumlah = $_POST['jumlah'];
@@ -89,8 +79,10 @@ $db_link->close();
 </head>
 
 <body>
+
 <!-- Form untuk melakukan transaksi -->
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="container" >
+
     <label for="tanggal">Tanggal:</label><br>
     <input type="date" name="tanggal" value="<?php echo date("Y-m-d"); ?>" readonly><br><br>
 
@@ -108,6 +100,7 @@ $db_link->close();
     <button type="button" onclick="addMore()">Tambah Barang</button><br><br>
 
     <input type="submit" value="Simpan Transaksi">
+
 </form>
 
 <script>

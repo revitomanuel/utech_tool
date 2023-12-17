@@ -51,7 +51,7 @@ include "navbar.php";
         include "koneksi.php";
          if(isset($_GET['cari'])){
             $cari = $_GET['cari'];
-            $sql = "SELECT * from tb_barang where id_barang like '%$cari%' or nama_barang like '%$cari%'";
+            $sql = "SELECT * from tb_barang where id_barang = '$cari' or nama_barang like '%$cari%'";
          }else{
             $sql = "SELECT * from tb_barang";
          }
