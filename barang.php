@@ -88,7 +88,7 @@ include "navbar.php";
  
 <p><center><right><input type="button" value="Tambah Data Barang Baru" onclick="location.href='barang/tambah.php'"></right>
 
-<right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center></p>
+<right><input type="button" value="Cetak" onclick="location.href='barang/cetak_barang.php'"></right></center></p>
 
   
 

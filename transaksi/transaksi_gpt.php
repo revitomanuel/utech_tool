@@ -1,6 +1,6 @@
 <?php
 include "../koneksi.php";
-include "../navbar.php";
+
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_customer= $_POST['id_customer'];
     $idAdmin = $_POST['id_admin']; // ID Admin, bisa dari sesi login atau form lain
     $idBarang = $_POST['id_barang'];
+    $harga_satuan = $_POST['$harga_satuan'];
     $jumlah = $_POST['jumlah'];
 
     // Proses menyimpan transaksi ke database
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db_link->begin_transaction();
 
     // Tambahkan transaksi ke dalam tabel tb_transaksi
-    $sqlTransaksi = "INSERT INTO tb_transaksi (id_admin, tgl_transaksi, total) VALUES ($idAdmin, '$tanggal', 0)";
+    $sqlTransaksi = "INSERT INTO tb_transaksi (id_admin, tgl_transaksi, total) VALUES ($id_admin, '$tanggal', 0)";
 
     if ($db_link->query($sqlTransaksi) === TRUE) {
         $idTransaksi = $db_link->insert_id; // Mengambil ID transaksi yang baru saja dibuat
@@ -28,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $jumlahBarang = $jumlah[$key];
 
             // Mengambil harga satuan dari tb_barang
-            $sqlHarga = "SELECT harga_satuan FROM tb_barang WHERE id_barang = $id";
+            $sqlHarga = "SELECT harga_satuan FROM tb_barang WHERE id_barang = $id_barang";
             $result = $db_link->query($sqlHarga);
 
             if ($result->num_rows > 0) {
@@ -90,10 +91,18 @@ $db_link->close();
     <input type="text" name="id_admin" required><br><br>
 
     <label for="id_barang">ID Barang:</label><br>
-    <input type="text" name="id_barang[]" required><br><br>
+    <input type="text" name="id_barang" required><br><br>
+
+    <label for="id_admin">Harga satuan:</label><br>
+    <input type="text" name="harga_satuan" required><br><br>
+    <script>
+    function cetak(){
+  var id_barang =document.getElementById("harga_satuan").value;
+      document.location='transaksi2.php?id_barang='+id_barang+'';}
+     </script>
 
     <label for="jumlah">Jumlah:</label><br>
-    <input type="number" name="jumlah[]" required><br><br>
+    <input type="number" name="jumlah" required><br><br>
 
     <!-- Untuk menambah barang lagi -->
     <div id="more-items"></div>

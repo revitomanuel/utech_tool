@@ -73,7 +73,7 @@ include "navbar.php";
 
  <center> <right><input type="button" value="Tambah Data Pegawai Baru" onclick="location.href='pegawai/tambah.php'"></right>
 
-  <right><input type="button" value="Cetak" onclick="location.href='../menuisi/pencetakan.php'"></right></center>
+  <right><input type="button" value="Cetak" onclick="location.href='pegawai/cetak_pegawai.php'"></right></center>
   </p></table>
 
   </div>
