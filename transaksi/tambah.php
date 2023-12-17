@@ -1,5 +1,6 @@
 <?php
 include "../koneksi.php";
+include "../navbar.php";
 
 
 
@@ -7,26 +8,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
     $tanggal = date("Y-m-d"); // Tanggal hari ini
     $id_customer= $_POST['id_customer'];
-    $id_admin = $_POST['id_admin']; // ID Admin, bisa dari sesi login atau form lain
-    $id_barang = $_POST['id_barang'];
+    $idAdmin = $_POST['id_admin']; // ID Admin, bisa dari sesi login atau form lain
+    $idBarang = $_POST['id_barang'];
     $harga_satuan = $_POST['$harga_satuan'];
     $jumlah = $_POST['jumlah'];
 
     // Proses menyimpan transaksi ke database
-    $total = 0;
+    $totalHarga = 0;
 
     // Mulai transaksi
     $db_link->begin_transaction();
 
     // Tambahkan transaksi ke dalam tabel tb_transaksi
-    $sqlTransaksi = "INSERT INTO tb_transaksi (id_admin, tgl_transaksi, total) VALUES ($id_admin, '$tgl_transaksi', 0)";
+    $sqlTransaksi = "INSERT INTO tb_transaksi (id_admin, tgl_transaksi, total) VALUES ($id_admin, '$tanggal', 0)";
 
     if ($db_link->query($sqlTransaksi) === TRUE) {
-        $id_transaksi = $db_link->insert_id; // Mengambil ID transaksi yang baru saja dibuat
+        $idTransaksi = $db_link->insert_id; // Mengambil ID transaksi yang baru saja dibuat
 
         // Loop untuk setiap barang dan jumlahnya
-        foreach ($id_barang as $key => $id) {
-            $jumlah = $jumlah[$key];
+        foreach ($idBarang as $key => $id) {
+            $jumlahBarang = $jumlah[$key];
 
             // Mengambil harga satuan dari tb_barang
             $sqlHarga = "SELECT harga_satuan FROM tb_barang WHERE id_barang = $id_barang";
@@ -34,12 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                $harga_satuan = $row['harga_satuan'];
-                $subtotal = $jumlah * $harga_satuan;
-                $total += $subtotal;
+                $hargaSatuan = $row['harga_satuan'];
+                $subtotal = $jumlahBarang * $hargaSatuan;
+                $totalHarga += $subtotal;
 
                 // Simpan detail transaksi ke dalam tabel tb_detail_transaksi
-                $sqlDetailTransaksi = "INSERT INTO tb_detail_transaksi (id_transaksi, id_barang, jumlah, subtotal) VALUES ($id_transaksi, $id_barang, $jumlah, $subtotal)";
+                $sqlDetailTransaksi = "INSERT INTO tb_detail_transaksi (id_transaksi, id_barang, jumlah_barang, subtotal) VALUES ($idTransaksi, $id, $jumlahBarang, $subtotal)";
 
                 if ($db_link->query($sqlDetailTransaksi) !== TRUE) {
                     echo "Error: " . $sqlDetailTransaksi . "<br>" . $db_link->error;
@@ -47,14 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     break;
                 }
             } else {
-                echo "Barang dengan ID $id_barang tidak ditemukan.";
+                echo "Barang dengan ID $id tidak ditemukan.";
                 $db_link->rollback(); // Rollback jika barang tidak ditemukan
                 break;
             }
         }
 
         // Update total harga di tb_transaksi
-        $sqlUpdateTotal = "UPDATE tb_transaksi SET total = $total WHERE id_transaksi = $id_transaksi";
+        $sqlUpdateTotal = "UPDATE tb_transaksi SET total = $totalHarga WHERE id_transaksi = $idTransaksi";
         if ($db_link->query($sqlUpdateTotal) !== TRUE) {
             echo "Error updating total: " . $db_link->error;
             $db_link->rollback(); // Rollback jika terjadi kesalahan saat mengupdate total harga
@@ -128,7 +129,7 @@ $db_link->close();
     }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="../js/bootstrap.js"></script>
 <script src="../js/pooper.min.js"></script>
 </body>
 </html>

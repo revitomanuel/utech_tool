@@ -50,6 +50,8 @@ if(isset($_GET['id_pegawai'])) {
                     <a href="pegawai.php" class="btn btn-secondary">Batal</a>
                 </form>
             </div>
+
+
         </body>
         </html>
         <?php
