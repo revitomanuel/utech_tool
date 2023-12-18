@@ -26,18 +26,19 @@ include "navbar.php";
 		<table class="table table-bordered table-striped table-hover">
 		<table cellspacing="0" cellpadding='35' align="center">
 
-          <tr>
+    <tr>
 			<td class="active">ID</td>
-          <td class="active">Nama Pegawai</td>
-          <td class="active">Alamat Pegawai</td>
+      <td class="active">Nama Pegawai</td>
+      <td class="active">Alamat Pegawai</td>
 		  <td class="active">Telp Pegawai</td>
-        	<td align="center">Aksi</td>
+      <td class="active">Tanggal Mulai Bekerja</td>
+      <td align="center">Aksi</td>
 		</tr>
 
 <style>
   .table-responsive {
     background-color: white;
-    width: 900;
+    width: 1400;
   }
 </style>
 
@@ -61,7 +62,8 @@ include "navbar.php";
                 <td><?php echo $data['nama_pegawai']; ?></td>
                 <td><?php echo $data['alamat_pegawai']; ?></td>
                 <td><?php echo $data['telp_pegawai']; ?></td>
-                
+                <td><?php echo $data['tggl_mulai']; ?></td>
+
    
 
     <td>

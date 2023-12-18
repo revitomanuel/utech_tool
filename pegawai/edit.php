@@ -44,7 +44,12 @@ if(isset($_GET['id_pegawai'])) {
                         <label for="telp_pegawai" class="form-label">Telp Pegawai:</label>
                         <input type="text" class="form-control" id="telp_pegawai" name="telp_pegawai" value="<?php echo $data['telp_pegawai']; ?>">
                     </div>
+
+                    <div class="mb-3">
+                        <label for="tggl_mulai" class="form-label">Tanggal Mulai Bekerja:</label>
+                        <input type="date" class="form-control" id="tggl_mulai" name="tggl_mulai" value="<?php echo $data['tggl_mulai']; ?>">
                     </div>
+                
                     
                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
                     <a href="../pegawai.php" class="btn btn-secondary">Batal</a>

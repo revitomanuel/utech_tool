@@ -7,7 +7,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CETAK DATA </title>
+	<title>CETAK DATA</title>
 	<style>
 		div {
 			width: 1000px;
@@ -39,6 +39,7 @@
               <th width="165px">NAMA PEGAWAI</th>
               <th width="200px" >ALAMAT PEGAWAI</th>
               <th width="200px">TELP PEGAWAI</th>
+			  <th width="200px">TANGGAL MULAI BEKERJA</th>
            
 			</tr>
 			<tr>
@@ -54,6 +55,7 @@
                	<td><?php echo "$data[nama_pegawai]"; ?></td>
                 <td><?php echo "$data[alamat_pegawai]"; ?></td>
 		      	<td><?php echo "$data[telp_pegawai]"; ?></td>
+				<td><?php echo "$data[tggl_mulai]"; ?></td>
 			   
 				</tr>
 				<?php

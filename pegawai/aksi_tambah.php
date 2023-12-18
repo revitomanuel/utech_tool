@@ -5,12 +5,13 @@ $id_pegawai=$_POST['id_pegawai'];
 $nama_pegawai=$_POST['nama_pegawai'];
 $alamat_pegawai=$_POST['alamat_pegawai'];
 $telp_pegawai =$_POST['telp_pegawai'];
+$tggl_mulai=$_POST['tggl_mulai'];
 
 
 
 
 //mengecek jika ada form yang kosong
-if($id_pegawai==""||$nama_pegawai==""||$alamat_pegawai==""||$telp_pegawai==""){;?>
+if($id_pegawai==""||$nama_pegawai==""||$alamat_pegawai==""||$telp_pegawai==""||$tggl_mulai==""){;?>
 <!--jika ada form yang kosong-->
 <script type="text/javascript">
 alert("Data tidak boleh kosong!!");  document.location="../pegawai.php?mod=tambah";</script>
@@ -28,7 +29,7 @@ alert("Data tidak boleh kosong!!");  document.location="../pegawai.php?mod=tamba
 
   if($row==0){
 // script untuk menambahkan data ke tabel aksi_tambah
-    $query=mysqli_query($db_link,"INSERT INTO tb_pegawai(id_pegawai,nama_pegawai,alamat_pegawai,telp_pegawai)VALUES('$id_pegawai','$nama_pegawai','$alamat_pegawai','$telp_pegawai')")or die ("GAGAL");
+    $query=mysqli_query($db_link,"INSERT INTO tb_pegawai(id_pegawai,nama_pegawai,alamat_pegawai,telp_pegawai,tggl_mulai)VALUES('$id_pegawai','$nama_pegawai','$alamat_pegawai','$telp_pegawai','$tggl_mulai')")or die ("GAGAL");
 
   
 
