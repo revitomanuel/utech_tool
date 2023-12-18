@@ -66,7 +66,7 @@ include "navbar.php";
 
     <td>
       <a href="pegawai/edit.php?id_pegawai=<?php echo "$data[id_pegawai]"; ?>">EDIT</a> |						
-      <a href="pegawai/aksi_hapus.php?id_pegawai=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a>
+      <a href="pegawai/aksi_hapus_pegawai.php?id_pegawai=<?php echo "$data[id_pegawai]"; ?>" onclick="return confirm('Anda yakin ingin menghapus data?<?php echo "$data[id_pegawai]"; ?>  ')">HAPUS</a>
     </td>
 				</tr>
 				<?php

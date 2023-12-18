@@ -36,7 +36,8 @@
           <a class="nav-link active" aria-current="page" href="customer.php">Customer</a>
         </li>
 
-<ul>
+     
+
 
         <li class="nav-item">
           <a class="nav-link" href="index.php">Logout</a>

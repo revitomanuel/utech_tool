@@ -61,7 +61,7 @@ if(isset($_GET['id_barang'])) {
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                    <a href="barang.php" class="btn btn-secondary">Batal</a>
+                    <a href="../barang.php" class="btn btn-secondary">Batal</a>
                 </form>
             </div>
         </body>
