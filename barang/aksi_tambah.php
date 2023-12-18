@@ -8,10 +8,11 @@ $kategori_barang =$_POST['kategori_barang'];
 $tahun_rilis=$_POST['tahun_rilis'];
 $harga_satuan=$_POST['harga_satuan'];
 $stok_barang=$_POST['stok_barang'];
-
+$tanggal_barang = $_POST['tanggal_barang'];
+    
 
 //mengecek jika ada form yang kosong
-if($id_barang==""||$nama_barang==""||$jenis_barang==""||$kategori_barang==""||$tahun_rilis==""||$harga_satuan==""||$stok_barang==""){;?>
+if($id_barang==""||$nama_barang==""||$jenis_barang==""||$kategori_barang==""||$tahun_rilis==""||$harga_satuan==""||$stok_barang==""||$tanggal_barang==""){;?>
 <!--jika ada form yang kosong-->
 <script type="text/javascript">
 alert("Data tidak boleh kosong!!");  document.location="../barang.php?mod=tambah";</script>;
@@ -28,7 +29,7 @@ alert("Data tidak boleh kosong!!");  document.location="../barang.php?mod=tambah
   // Assuming $row is the result of a SELECT query
 if ($row ==0) {
   // script untuk menambahkan ke table tb_barang table  
-  $query = mysqli_query($db_link, "INSERT INTO tb_barang (id_barang, nama_barang, jenis_barang, kategori_barang, tahun_rilis, harga_satuan, stok_barang) VALUES ('$id_barang', '$nama_barang', '$jenis_barang', '$kategori_barang', '$tahun_rilis', '$harga_satuan', '$stok_barang')") or die("GAGAL");
+  $query = mysqli_query($db_link, "INSERT INTO tb_barang (id_barang, nama_barang, jenis_barang, kategori_barang, tahun_rilis, harga_satuan, stok_barang, tanggal_barang) VALUES ('$id_barang', '$nama_barang', '$jenis_barang', '$kategori_barang', '$tahun_rilis', '$harga_satuan', '$stok_barang', '$tanggal_barang')") or die("GAGAL");
 
   if ($query) {
       echo "Data berhasil ditambahkan.";

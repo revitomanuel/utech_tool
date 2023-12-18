@@ -42,7 +42,7 @@
               <th width="120px">TAHUN RILIS</th>
               <th widht="75px">HARGA SATUAN</th>
               <th width="50px">STOK BARANG</th>
-      
+			  <th width="50px">TANGGAL MASUK</th>
 
 			</tr>
 			<tr>
@@ -61,7 +61,7 @@
 			    <td><?php echo "$data[tahun_rilis]"; ?></td>
                 <td><?php echo "$data[harga_satuan]"; ?></td>
                 <td><?php echo "$data[stok_barang]"; ?></td>
-               
+				<td><?php echo "$data[tanggal_barang]"; ?></td>
 				</tr>
 				<?php
 				$no++;

@@ -34,6 +34,7 @@ include "navbar.php";
 		  <td class="active">Kategori Barang</td>
           <td class="active">Tahun Rilis</td>
 		  <td class="active">Harga Satuan</td>
+      <td class="active">Tanggal Masuk</td>
           <td class="active">Stok</>
         	<td align="center">Aksi</td>
 		</tr>
@@ -67,6 +68,7 @@ include "navbar.php";
                 <td><?php echo $data['kategori_barang']; ?></td>
                 <td><?php echo $data['tahun_rilis']; ?></td>
                 <td><?php echo $data['harga_satuan']; ?></td>
+                <td><?php echo $data['tanggal_barang']; ?></td>
                 <td><?php echo $data['stok_barang']; ?></td>
    
 

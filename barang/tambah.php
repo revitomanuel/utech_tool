@@ -75,6 +75,14 @@
 	</div>
 </p>
 
+
+<div class="form-group row">
+		<label for="stok_barang" class="col-sm-2 col-form-label">Tanggal masuk </label>
+		<div class="col-sm-10">
+			<input type="date" class="form-control" name="tanggal_barang" id="tanggal_barang">
+		</div>
+</div>
+
     <div class="form-group row">
 		<label for="stok_barang" class="col-sm-2 col-form-label">Stok Barang</label>
 		<div class="col-sm-10">

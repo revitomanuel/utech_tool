@@ -56,6 +56,11 @@ if(isset($_GET['id_barang'])) {
                     </div>
                     
                     <div class="mb-3">
+                        <label for="harga_satuan" class="form-label">Tanggal masuk:</label>
+                        <input type="date" class="form-control" id="tanggal_barang" name="tanggal_barang" value="<?php echo $data['tanggal_barang']; ?>">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="stok_barang" class="form-label">Stok Barang:</label>
                         <input type="text" class="form-control" id="stok_barang" name="stok_barang" value="<?php echo $data['stok_barang']; ?>">
                     </div>
