@@ -10,7 +10,7 @@ $password=$_POST['password'];
 if($id_admin==""||$nama_admin==""||$password==""){;?>
     <!--jika ada form yang kosong-->
     <script type="text/javascript">
-    alert("Data tidak boleh kosong!!");  document.location="../register.php?mod=tambah";
+    alert("Data tidak boleh kosong!!");  document.location="register.php?mod=tambah";
     </script>
 
 <?php
